@@ -1,4 +1,5 @@
 let express=require('express');
+let cors=require('cors');
 let app=express();
 let PORT=5000;
 let newWorker=require('./routes/newWorkers');
@@ -6,6 +7,7 @@ let addAttendance=require('./routes/addAttendance');
 let resetPassword=require('./routes/resetPassword');
 let auth=require('./routes/auth');
 app.use(express.json());
+app.use(cors());
 
 app.use('/api/register',auth);
 app.use('/api/addNewWorkers',newWorker);
