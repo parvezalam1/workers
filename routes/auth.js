@@ -7,11 +7,6 @@ routes.post('/', async (req, res) => {
     let username = req.body.username;
     let mobile = req.body.mobile;
     let password = req.body.password;
-
-
-
-
-
     let sql = `select * from owner_register where username='${username}'
 or mobile=${mobile} or password='${password}'`;
 

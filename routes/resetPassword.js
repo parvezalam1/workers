@@ -8,8 +8,7 @@ let sql=`select rid, password from owner_register where
  username='${resetUsername}' and mobile=${resetMobile}`;
 db.query(sql,(err,result)=>{
 if(result!==undefined){
-let rid=result.rid;
-    res.json({status:200,result:1,rid:rid})    
+    res.json({status:200,result:result})    
 }else{
     res.json({status:500,result:0})    
 }
